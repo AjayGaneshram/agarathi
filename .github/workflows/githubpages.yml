@@ -4,14 +4,14 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'src/input.json'
+      - 'src/input.json'  # ✅ Trigger only when input.json changes
   workflow_dispatch:
 
 permissions:
   contents: write  
   pages: write      
   id-token: write
-
+     
 jobs:
   update-output:
     runs-on: ubuntu-latest
@@ -30,7 +30,6 @@ jobs:
           else
             echo "✅ input.json found!"
           fi
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -40,7 +39,7 @@ jobs:
         run: npm ci
 
       - name: Generate Output JSON
-        run: node src/generateJson.cjs
+        run: node src/generateJson.cjs  # ✅ Run from correct path
 
       - name: Commit and Push Changes
         run: |
@@ -52,7 +51,7 @@ jobs:
         continue-on-error: true  
 
   build-and-deploy:
-    needs: update-output
+    needs: update-output  
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source  
@@ -60,8 +59,7 @@ jobs:
 
       - name: Fetch Latest Changes (Ensure Updated Output.jsx)
         run: |
-          git pull origin main
-
+          git pull origin main  # ✅ Pull latest committed changes before building
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -71,10 +69,7 @@ jobs:
         run: npm ci
 
       - name: Build Project
-        run: npm run build
-
-      - name: List build output
-        run: ls -R dist  # ✅ Debug if dist exists
+        run: npm run build  
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3   
@@ -87,4 +82,3 @@ jobs:
         with: 
           token: ${{ secrets.GITHUB_TOKEN }}
           artifact_name: 'github-pages'
-          publish_dir: dist
