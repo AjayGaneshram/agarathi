@@ -30,7 +30,6 @@ jobs:
           else
             echo "✅ input.json found!"
           fi
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -61,7 +60,6 @@ jobs:
       - name: Fetch Latest Changes (Ensure Updated Output.jsx)
         run: |
           git pull origin main  # ✅ Pull latest committed changes before building
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -73,15 +71,14 @@ jobs:
       - name: Build Project
         run: npm run build  
 
-      - name: Remove Previous Artifacts  # ✅ Optional cleanup
-        run: rm -rf dist
-
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v3   
         with:
-          path: dist  # ✅ No duplicate artifact name
+          name: 'github-pages'
+          path: dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # ✅ No artifact_name
+        with: 
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: 'github-pages'
