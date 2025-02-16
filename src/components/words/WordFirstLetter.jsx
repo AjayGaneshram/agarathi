@@ -147,7 +147,7 @@ const WordListFirstLetter = ({ wordData }) => {
               title={letter}
               items={words}
               renderItem={(word) => (
-                <div key={word} className="mb-4 p-2 bg-gray-100 text-center rounded-lg hover:bg-red-800 hover:text-white transition-all cursor-pointer"
+                <div key={word} className="mb-4 p-2 bg-gray-100 text-center rounded-lg hover:bg-primary hover:text-white transition-all cursor-pointer"
                 onClick={() => handleNavigate(word)}
                 >
                  {word}

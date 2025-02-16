@@ -23,7 +23,7 @@ const WordSummary = () => {
   };
 
   return (
-    <div>
+    <div className="bg-red-50">
       {/* <Header /> */}
       <div className="p-6 max-w-4xl mx-auto bg-gray-50 min-h-screen">
         <button
@@ -58,12 +58,12 @@ const WordSummary = () => {
           <div>
             {/* Word Title */}
             <div className="mb-8 text-center">
-              <h1 className="text-4xl font-extrabold text-red-500">
+              <h1 className="text-4xl font-extrabold text-primary">
                 {wordDetails.word}
               </h1>
-              <p className="text-gray-700 mt-4 text-lg">
-                <b className="text-red-600">பொருள்:</b>{" "}
-                {wordDetails.detail}
+              <p className="text-gray-700 mt-4 text-lg flex item-center flex-col">
+                <b className="text-primary">பொருள்</b>{" "}
+                <span>{wordDetails.detail}</span>
               </p>
             </div>
           </div>
