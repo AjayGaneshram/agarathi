@@ -13,12 +13,11 @@ const WordSummary = () => {
 
   const { outputJson } = useContext(DataContext);
   useEffect(() => {
-    console.log("-----------------+++++++++++")
     const fetchWordData = async () => {
       outputJson!=null && setWordDetails(outputJson["eachWord"][decodedWord]);
     };
     fetchWordData();
-  }, []);
+  }, [outputJson,decodedWord]);
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

@@ -12,11 +12,10 @@ const WordsByFirstLetter = () => {
   const { outputJson } = useContext(DataContext);
 
   useEffect(() => {
-    console.log("-----------------+++++++++++}}}}}}}}}}}}}}}}")
     if(outputJson!=null){
     setWordsGroupedByFirstLetter(outputJson["firstLetterWords"] || {});
     setWordDetails(outputJson["eachWord"] || {});}
-  }, []);
+  }, [outputJson]);
 
   const navigate = useNavigate();
   const homePageNavigate = () => navigate("/agarathi/home");
