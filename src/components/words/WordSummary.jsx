@@ -13,8 +13,9 @@ const WordSummary = () => {
 
   const { outputJson } = useContext(DataContext);
   useEffect(() => {
+    console.log("-----------------+++++++++++")
     const fetchWordData = async () => {
-      setWordDetails(outputJson["eachWord"][decodedWord]);
+      outputJson!=null && setWordDetails(outputJson["eachWord"][decodedWord]);
     };
     fetchWordData();
   }, []);
