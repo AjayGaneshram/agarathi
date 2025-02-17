@@ -320,9 +320,11 @@ const TamilAlphabetTable = ({ words }) => {
   };
   return (
     <div className="container mx-auto p-4">
+      
       <h2 className="text-2xl font-semibold text-center mb-6 text-primary">
          அகர வரிசை சொற்கள்
       </h2>
+      <h2 className="p-4 text-primary text-center">சொற்களின் முதல் எழுத்துக்கள் வழியாக பொருளை அறிக</h2>
       <div className="overflow-x-auto overflow-y-auto max-h-[400px] border border-gray-300 rounded-lg shadow-lg">
         <table className="min-w-full table-auto border-collapse">
           <thead>

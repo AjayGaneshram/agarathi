@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaLink } from "react-icons/fa6";
 
 const Pagination = ({ currentPage, totalPages, handlePageChange }) => {
   const pages = [];
@@ -13,7 +14,7 @@ const Pagination = ({ currentPage, totalPages, handlePageChange }) => {
         <li>
           <button
             onClick={() => handlePageChange(currentPage - 1)}
-            className="px-3 py-1 font-semibold border border-red-200 rounded text-red-500 bg-red-50"
+            className="px-3 py-1 font-semibold border border-primary rounded text-primary bg-red-50"
           >
             « முந்தைய
           </button>
@@ -23,8 +24,8 @@ const Pagination = ({ currentPage, totalPages, handlePageChange }) => {
         <li key={page}>
           <button
             onClick={() => handlePageChange(page)}
-            className={`px-3 py-1 border border-red-200 rounded ${
-              page === currentPage ? "bg-red-600 text-white" : ""
+            className={`px-3 py-1 border border-primary rounded ${
+              page === currentPage ? "bg-primary text-white" : ""
             }`}
           >
             {page}
@@ -35,7 +36,7 @@ const Pagination = ({ currentPage, totalPages, handlePageChange }) => {
         <li>
           <button
             onClick={() => handlePageChange(currentPage + 1)}
-            className="px-3 py-1 font-semibold border rounded text-red-500 bg-red-50"
+            className="px-3 py-1 font-semibold border border-primary rounded text-primary bg-red-50"
           >
             அடுத்து »
           </button>
@@ -139,7 +140,9 @@ const WordListFirstLetter = ({ wordData }) => {
       {filteredWords.length === 0 ? (
         <div className="p-4 text-gray-500 text-center">சொற்கள் கிடைக்கவில்லை</div>
       ) : (
-        Object.entries(groupedWords)
+        <div>
+          <h2 className="p-4 m-4 text-primary text-center">மேலும் தகவலுக்கு சொற்களை அழுத்தவும்</h2>
+        {Object.entries(groupedWords)
           .sort()
           .map(([letter, words]) => (
             <PaginatedSection
@@ -147,14 +150,15 @@ const WordListFirstLetter = ({ wordData }) => {
               title={letter}
               items={words}
               renderItem={(word) => (
-                <div key={word} className="mb-4 p-2 bg-gray-100 text-center rounded-lg hover:bg-primary hover:text-white transition-all cursor-pointer"
+                <div key={word} className="mb-4 p-2 bg-gray-100 text-center rounded-lg hover:bg-primary hover:text-white transition-all cursor-pointer grid grid-flow-col items-center w-auto"
                 onClick={() => handleNavigate(word)}
                 >
-                 {word}
+                  
+                 <span>{word}  </span>
                 </div>
               )}
             />
-          ))
+          ))}</div>
       )}
     </div>
   );
