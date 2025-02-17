@@ -1,6 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { registerSW } from "virtual:pwa-register";
+
+registerSW({
+  immediate: true, // ✅ Instantly register and activate SW
+  onNeedRefresh() {
+    location.reload(); // ✅ Auto-refresh the page when an update is available
+  },
+});
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
