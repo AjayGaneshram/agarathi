@@ -13,7 +13,7 @@ export default defineConfig({
       },
       strategies: "generateSW", // ✅ Automatically generates the service worker
       manifest: {
-        short_name: "Agarathi",
+        short_name: "அகராதி",
         name: "Agarathi App",
         icons: [],
         start_url: "/agarathi/",
