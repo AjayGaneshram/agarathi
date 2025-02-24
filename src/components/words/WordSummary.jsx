@@ -34,13 +34,14 @@ const WordSummary = () => {
           ↑
         </button>
         <div className="mb-4">
-          <a className="text-red-500 hover:text-orange-700 transition text-lg flex items-center">
+          <button className="text-red-500 hover:text-orange-700 transition text-lg flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 mr-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              onClick={homePageNavigate}
             >
               <path
                 strokeLinecap="round"
@@ -52,7 +53,7 @@ const WordSummary = () => {
             <span className="cursor-pointer" onClick={homePageNavigate}>
               முகப்புப்பக்கம்
             </span>
-          </a>
+          </button>
         </div>
         {wordDetails.length != 0 && (
           <div>

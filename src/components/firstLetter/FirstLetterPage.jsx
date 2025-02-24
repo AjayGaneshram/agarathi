@@ -42,6 +42,7 @@ const WordsByFirstLetter = () => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              onClick={homePageNavigate}
             >
               <path
                 strokeLinecap="round"
