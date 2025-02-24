@@ -58,12 +58,12 @@ const WordSummary = () => {
         {wordDetails.length != 0 && (
           <div>
             {/* Word Title */}
-            <div className="mb-8 text-center">
-              <h1 className="text-4xl font-extrabold text-primary">
+            <div className="mb-8">
+              <h1 className="text-4xl font-extrabold text-primary text-center">
                 {wordDetails.word}
               </h1>
-              <p className="text-gray-700 mt-4 text-lg flex item-center flex-col">
-                <b className="text-primary">பொருள்</b>{" "}
+              <p className="text-gray-700 mt-4 text-lg">
+                <b className="text-primary">பொருள் :</b>{" "}
                 <span>{wordDetails.detail}</span>
               </p>
             </div>
