@@ -10,6 +10,26 @@ export default defineConfig({
         cleanupOutdatedCaches: true, // ✅ Remove old caches
         clientsClaim: true, // ✅ Take control of uncontrolled clients
         skipWaiting: true, // ✅ Activate SW immediately
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/ajayganeshram\.github\.io\/agarathi\/assets\/.*\.(js|css|png|jpg|svg|woff2?)$/, 
+            handler: "CacheFirst", 
+            options: {
+              cacheName: "static-assets",
+              expiration: { maxAgeSeconds: 60 * 60 * 24 * 30 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/ajayganeshram\.github\.io\/agarathi\/.*$/, 
+            handler: "StaleWhileRevalidate",
+            options: {
+              cacheName: "dynamic-content",
+              expiration: { maxAgeSeconds: 60 * 60 * 24 * 7 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+        ],
       },
       strategies: "generateSW", // ✅ Automatically generates the service worker
       manifest: {
@@ -20,7 +40,9 @@ export default defineConfig({
         display: "standalone",
         theme_color: "#ffffff",
         background_color: "#ffffff",
-      }
+      },
+       // ✅ Detects a new update and triggers an event
+       devOptions: { enabled: true },
     }),
   ],
   base: "/agarathi/",

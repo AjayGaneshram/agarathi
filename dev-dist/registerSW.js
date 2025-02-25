@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) navigator.serviceWorker.register('/agarathi/dev-sw.js?dev-sw', { scope: '/agarathi/', type: 'classic' })

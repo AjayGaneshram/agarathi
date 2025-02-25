@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import DataProvider, { DataContext } from './DataContext.jsx'
+
+
 const WordsByFirstLetter = lazy(() =>
   import("./components/firstLetter/FirstLetterPage.jsx")
 );

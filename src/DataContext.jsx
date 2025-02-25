@@ -9,7 +9,6 @@ const DataProvider = ({ children }) => {
     setOutputJson(jsonData);
   }, []); // empty dependency array to run the fetch only once on mount
 
-  console.log(jsonData)
   return (
     <DataContext.Provider
       value={{ outputJson }}
