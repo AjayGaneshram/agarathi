@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Redirecting...</title>
-  <script>
-    // Preserve the current path, query string, and hash
-    const currentPath = window.location.pathname + window.location.search + window.location.hash;
-
-    // Check if we are already at index.html, if so, no need to redirect again
-    if (!currentPath.includes("index.html")) {
-      // Redirect to index.html, preserving the current path
-      window.location.replace("/agarathi/");
-    }
-  </script>
-</head>
-<body>
-  <p>If you are not redirected automatically, <a href="/agarathi/">click here</a>.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      // Preserve the current path, query string, and hash
+      const currentPath =
+        window.location.pathname +
+        window.location.search +
+        window.location.hash;
+      const allowedDomains = ["ajayganeshram.github.io"];
+      const url = new URL(window.location.href);
+      if (!allowedDomains.includes(url.hostname)) {
+        alert("Unauthorised redirect blocked");
+      }
+      // Check if we are already at index.html, if so, no need to redirect again
+      if (!currentPath.includes("index.html")) {
+        // Redirect to index.html, preserving the current path
+        window.location.replace("/agarathi/");
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+      If you are not redirected automatically,
+      <a href="/agarathi/">click here</a>.
+    </p>
+  </body>
 </html>
