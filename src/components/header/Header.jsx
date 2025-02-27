@@ -44,7 +44,7 @@ const Header = () => {
     setMenuOpen(false);
   };
   const homePageNavigate = () => {
-    navigate(`/agarathi/home`);
+    navigate(`/agarathi/`);
     setMenuOpen(false);
   };
   const tirattuPageNavigate = () => {

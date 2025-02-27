@@ -8,7 +8,7 @@ const WordSummary = () => {
   const decodedWord = decodeURIComponent(wordName);
   const navigate = useNavigate();
   const homePageNavigate = () => {
-    navigate(`/agarathi/home`);
+    navigate(`/agarathi/`);
   };
 
   const { outputJson } = useContext(DataContext);

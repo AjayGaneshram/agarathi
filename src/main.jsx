@@ -28,7 +28,6 @@ createRoot(document.getElementById('root')).render(
      <Suspense>
      <Routes>
           <Route path="/agarathi/" element={ <App /> } />
-          <Route path="/agarathi/home" element={  <App />} />
           <Route
             path="/agarathi/firstLetter/:letter"
             element={<WordsByFirstLetter />}
