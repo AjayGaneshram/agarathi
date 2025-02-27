@@ -21,11 +21,11 @@ export default defineConfig({
           },
         },
         {
-          urlPattern: /^https:\/\/ajayganeshram\.github\.io\/agarathi\/.*$/,
-          handler: "StaleWhileRevalidate",
+          urlPattern: /^https:\/\/ajayganeshram\.github\.io\/agarathi\/.*\.(js|css|png|jpg|svg|woff2?)$/,
+          handler: "CacheFirst",
           options: {
-            cacheName: "dynamic-content",
-            expiration: { maxAgeSeconds: 60 * 60 * 24 * 7 },
+            cacheName: "static-assets",
+            expiration: { maxAgeSeconds: 60 * 60 * 24 * 365 * 2 },
             cacheableResponse: { statuses: [0, 200] },
           },
         },
