@@ -4,24 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>அகராதி</title>
-    <!-- Cloudflare Web Analytics -->
-    
-    <!-- End Cloudflare Web Analytics -->
-    <!-- Security Headers -->
+
+    <!-- Content Security Policy (CSP) -->
     <meta
       http-equiv="Content-Security-Policy"
       content="
         default-src 'self'; 
-        script-src 'self'; 
+        script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; 
         style-src 'self' 'unsafe-inline'; 
-        img-src 'self' data:; 
-        font-src 'self' data:;"
+        img-src 'self' data: https://www.google-analytics.com; 
+        font-src 'self' data:; 
+        connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;"
     />
+
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="upgrade-insecure-requests"
-    />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
