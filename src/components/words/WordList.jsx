@@ -2,19 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../DataContext";
 import { useNavigate } from "react-router-dom";
 
-// const wordData = {
-//   "சிவம்": { word: "சிவம்", detail: "யாவும் யாமே" },
-//   "இயல்பு": { word: "இயல்பு", detail: "உயிரினங்கள் ..." },
-//   "உயிர்": { word: "உயிர்", detail: "நில்லாச் ..." },
-//   "சிந்தனை": { word: "சிந்தனை", detail: "சிந்தனை என்பது ..." },
-//   "தூண்டல்": { word: "தூண்டல்", detail: "தூண்டல் எனப்படுவது ..." },
-//   "இயக்கம்": { word: "இயக்கம்", detail: "உரு, இயல்பு, ..." },
-//   "பண்பு": { word: "பண்பு", detail: "சிவத்திற்கு ..." },
-//   "மையம்": { word: "மையம்", detail: "புறப்பட்ட ..." },
-//   "செயல்": { word: "செயல்", detail: "விளைவு நோக்குச் ..." },
-//   "வினை": { word: "வினை", detail: "விளைவறியாச் ..." },
-// };
-
 const WordList = () => {
 
 	const { outputJson } = useContext(DataContext);
