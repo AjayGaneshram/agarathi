@@ -4,7 +4,6 @@ import './index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import DataProvider, { DataContext } from './DataContext.jsx'
 
-
 const WordsByFirstLetter = lazy(() =>
   import("./components/firstLetter/FirstLetterPage.jsx")
 );
@@ -21,6 +20,10 @@ const Header=lazy(() =>
   import("./components/header/Header.jsx")
 );
 
+const WordList=lazy(()=>
+  import('./components/words/WordList.jsx')
+)
+
 createRoot(document.getElementById('root')).render(
     <DataProvider>
      <BrowserRouter >
@@ -35,6 +38,10 @@ createRoot(document.getElementById('root')).render(
           <Route
             path="/agarathi/word/:wordName"
             element={<WordSummary />}
+          />
+          <Route
+            path="/agarathi/allWords"
+            element={<WordList />}
           />
           </Routes>
        </Suspense>

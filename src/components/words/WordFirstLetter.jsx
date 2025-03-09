@@ -32,7 +32,7 @@ const Modal = ({ wordDetails, onClose }) => {
        <h1 className="text-2xl font-bold text-center text-primary">{wordDetails.word}</h1>
        
         <p className="mt-4 text-gray-700 text-lg">
-          <b className="text-primary">பொருள் :</b> {wordDetails.detail}
+         {wordDetails.detail}
         </p>
         
       </div>

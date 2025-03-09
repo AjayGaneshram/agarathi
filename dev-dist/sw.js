@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-3d1c42bc'], (function (workbox) { 'use strict';
+define(['./workbox-ce4f0d5f'], (function (workbox) { 'use strict';
 
   self.skipWaiting();
   workbox.clientsClaim();
@@ -82,7 +82,7 @@ define(['./workbox-3d1c42bc'], (function (workbox) { 'use strict';
     "revision": "ba94783a26113cb7e4cba8fb1e0aaea4"
   }, {
     "url": "index.html",
-    "revision": "0.4lh491fleag"
+    "revision": "0.hj3k5olrjog"
   }], {});
   workbox.cleanupOutdatedCaches();
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html"), {
@@ -91,15 +91,15 @@ define(['./workbox-3d1c42bc'], (function (workbox) { 'use strict';
   workbox.registerRoute(/^https:\/\/ajayganeshram\.github\.io\/agarathi\/assets\/.*\.(js|css|png|jpg|svg|woff2?)$/, new workbox.CacheFirst({
     "cacheName": "static-assets",
     plugins: [new workbox.ExpirationPlugin({
-      maxAgeSeconds: 2592000
+      maxAgeSeconds: 63072000
     }), new workbox.CacheableResponsePlugin({
       statuses: [0, 200]
     })]
   }), 'GET');
-  workbox.registerRoute(/^https:\/\/ajayganeshram\.github\.io\/agarathi\/.*$/, new workbox.StaleWhileRevalidate({
-    "cacheName": "dynamic-content",
+  workbox.registerRoute(/^https:\/\/ajayganeshram\.github\.io\/agarathi\/.*\.(js|css|png|jpg|svg|woff2?)$/, new workbox.CacheFirst({
+    "cacheName": "static-assets",
     plugins: [new workbox.ExpirationPlugin({
-      maxAgeSeconds: 604800
+      maxAgeSeconds: 63072000
     }), new workbox.CacheableResponsePlugin({
       statuses: [0, 200]
     })]

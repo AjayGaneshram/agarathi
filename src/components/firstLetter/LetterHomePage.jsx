@@ -324,14 +324,14 @@ const TamilAlphabetTable = ({ words }) => {
       <h2 className="text-2xl font-semibold text-center mb-6 text-primary">
          அகர வரிசை சொற்கள்
       </h2>
-      <h2 className="p-4 text-primary text-center">தேடும் சொல்லின் முதல் எழுத்தை தட்டினால், அவ்வெழுத்தில் தொடங்கும் சொற்களின்  பட்டியலையும், அச்சொற்களின் பொருளையும் அறிந்து கொள்ளலாம்.</h2>
+      <h2 className="p-4 text-primary text-center">முதல் எழுத்தைத் தட்டும் போது, அதில் தொடங்கும் சொற்களின் பட்டியலும், அவற்றின் பொருளும் காணலாம்.</h2>
       <div className="overflow-x-auto overflow-y-auto max-h-[400px] border border-gray-300 rounded-lg shadow-lg">
         <table className="min-w-full table-auto border-collapse">
           <thead>
             {uyirEzhuthukkal.sort().map((uyir, index) => (
               <th
                 key={index}
-                className="px-4 py-2 bg-gray-200 font-bold border border-gray-300 text-center"
+                className="px-2 py-2 bg-gray-200 font-bold border border-gray-300 text-center"
               >
                 {isUyirHighlighted(uyir) ? (
                   <a
@@ -361,7 +361,7 @@ const TamilAlphabetTable = ({ words }) => {
                   {row.uyirmei.sort().map((uyirmei, i) => (
                     <td
                       key={i}
-                      className="px-4 py-2 border border-gray-300 text-center"
+                      className="px-2 py-2 border border-gray-300 text-center"
                     >
                       {firstLetters.includes(uyirmei) ? (
                         <a
@@ -406,6 +406,7 @@ const LetterHomePage = () => {
   return (
     <div>
       <TamilAlphabetTable words={wordDetails} />
+      
     </div>
   );
 };
