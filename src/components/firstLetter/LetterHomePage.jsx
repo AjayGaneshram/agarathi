@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { DataContext } from "../../DataContext";
 import './search.css'
 const uyirmeiData = [
@@ -318,13 +318,16 @@ const TamilAlphabetTable = ({ words }) => {
   const handleNavigate = (letter) => {
     navigate(`/agarathi/firstLetter/${letter}`);
   };
+  const tirattuPageNavigate = () => {
+    navigate(`/agarathi/allWords`);
+  };
   return (
     <div className="container mx-auto p-4">
       
-      <h2 className="text-2xl font-semibold text-center mb-6 text-primary">
+      <h2 className="text-xl font-semibold text-center mb-3 text-red-900">
          அகர வரிசை சொற்கள்
       </h2>
-      <h2 className="p-4 text-black text-center">முதல் எழுத்தைத் தட்டும் போது, அதில் தொடங்கும் சொற்களின் பட்டியலும், அவற்றின் பொருளும் காணலாம்.</h2>
+      <h2 className="p-3 text-black text-center">முதல் எழுத்தைத் தட்டும் போது, அதில் தொடங்கும் சொற்களின் பட்டியலும், அவற்றின் பொருளும் காணலாம்.</h2>
       <div className="overflow-x-auto overflow-y-auto max-h-[400px] border border-gray-300 rounded-lg shadow-lg">
         <table className="min-w-full table-auto border-collapse">
           <thead>
@@ -381,6 +384,11 @@ const TamilAlphabetTable = ({ words }) => {
           </tbody>
         </table>
       </div>
+      <h2 className="p-3 text-black text-center"> 
+          சொற்திரட்டு பக்கத்தை அணுகி அனைத்து சொற்களின் பொருளை அறிக. <span
+          className="text-lg text-red-900 font-semibold flex items-center justify-center cursor-pointer"
+         onClick={()=>tirattuPageNavigate()}
+        >அணுகவும் »</span></h2>
     </div>
   );
 };

@@ -59,7 +59,7 @@ const WordsByFirstLetter = () => {
         {wordsGroupedByFirstLetter[decodedLetter]?.length > 0 && (
           <div>
             <div className="mb-8 text-center">
-              <h1 className="sm:text-sm md:text-xl font-extrabold text-primary mb-6">
+              <h1 className="sm:text-sm md:text-xl font-extrabold text-red-900 mb-6">
                 <span className="text-2xl">{decodedLetter}</span> வரிசை சொற்கள்
               </h1>
               

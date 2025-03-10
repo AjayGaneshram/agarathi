@@ -46,7 +46,7 @@ const Header = () => {
       {/* Navbar */}
       <div className="flex justify-between items-center h-full px-4 md:px-8 border-b-2 border-white-500">
         {/* Logo */}
-        <h1 className="text-white font-bold text-lg md:text-2xl cursor-pointer">
+        <h1 className="text-white font-bold text-lg md:text-xl cursor-pointer">
           <a onClick={() => homePageNavigate()}>செம்மை சொல்லகராதி</a>
         </h1>
         <div className="hidden md:flex gap-8">
