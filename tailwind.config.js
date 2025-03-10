@@ -7,6 +7,10 @@ module.exports = {
 			  secondary: "#9333EA", // Custom secondary color
 			  accent: "#F59E0B", // Custom accent color
 			},
+			fontSize: {
+				customLarge: "1.875rem", // Custom text size (30px)
+				customSmall: "0.5rem",  
+			  },
 		  },
 	},
 	plugins: [],

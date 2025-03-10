@@ -59,7 +59,7 @@ const WordList = () => {
           ↑
         </button>
 	
-      <h1 className="text-2xl text-center font-bold text-primary mb-4">செம்மை சொற்திரட்டு</h1>
+      <h1 className="text-xl text-center font-bold text-red-900 mb-4">செம்மை சொற்திரட்டு</h1>
       <div className="w-full max-w-5xl bg-white p-4 rounded-lg shadow-md">
         {sortedWords.map((item, index) => (
           <div key={index} className="border-b border-gray-300 py-3">

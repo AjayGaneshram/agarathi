@@ -98,7 +98,7 @@ const WordFirstLetter = ({ wordData }) => {
         <div className="p-4 text-gray-500 text-center">சொற்கள் கிடைக்கவில்லை</div>
       ) : (
         <div>
-          <h2 className="p-4 text-primary text-center">மேலும் தகவலுக்கு சொற்களை அழுத்தவும்</h2>
+          <h2 className="p-4 text-black text-center">மேலும் தகவலுக்கு சொற்களை அழுத்தவும்</h2>
           {Object.entries(groupedWords)
             .sort()
             .map(([letter, words]) => (
