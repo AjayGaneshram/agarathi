@@ -98,7 +98,7 @@ const WordFirstLetter = ({ wordData }) => {
       {/*filteredWords.length === 0 ? (
         <div className="p-4 text-gray-500 text-center">சொற்கள் கிடைக்கவில்லை</div>
       ) : */}
-        (
+        
         <div>
           <h2 className="p-4 text-black text-center">மேலும் தகவலுக்கு சொற்களை அழுத்தவும்</h2>
           {Object.entries(groupedWords)
@@ -120,7 +120,7 @@ const WordFirstLetter = ({ wordData }) => {
               </div>
             ))}
         </div>
-      )
+      
 
       {/* Modal for Word Details */}
       {selectedWord && <Modal wordDetails={selectedWord} onClose={() => setSelectedWord(null)} />}
