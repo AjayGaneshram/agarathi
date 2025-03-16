@@ -67,7 +67,7 @@ const WordFirstLetter = ({ wordData }) => {
   return (
     <div className="w-full max-w-5xl mx-auto p-4">
       {/* Search Bar */}
-      <div className="flex items-center gap-2 mb-6 border border-red-500 rounded-lg p-2 bg-white relative">
+      {/*<div className="flex items-center gap-2 mb-6 border border-red-500 rounded-lg p-2 bg-white relative">
       <span className="p-2 text-red-800">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
             <path d="M10 2a8 8 0 0 1 6.32 12.9l4.39 4.39a1 1 0 1 1-1.42 1.42l-4.39-4.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 4.24 10.24A6 6 0 0 0 10 4z" />
@@ -91,12 +91,14 @@ const WordFirstLetter = ({ wordData }) => {
             </svg>
           </button>
         )}
-      </div>
+      </div>*/}
 
       {/* Word List */}
-      {filteredWords.length === 0 ? (
+      
+      {/*filteredWords.length === 0 ? (
         <div className="p-4 text-gray-500 text-center">சொற்கள் கிடைக்கவில்லை</div>
-      ) : (
+      ) : */}
+        (
         <div>
           <h2 className="p-4 text-black text-center">மேலும் தகவலுக்கு சொற்களை அழுத்தவும்</h2>
           {Object.entries(groupedWords)
@@ -124,7 +126,6 @@ const WordFirstLetter = ({ wordData }) => {
       {selectedWord && <Modal wordDetails={selectedWord} onClose={() => setSelectedWord(null)} />}
     </div>
   );
-};
 
 
 
