@@ -120,7 +120,7 @@ const WordFirstLetter = ({ wordData }) => {
               </div>
             ))}
         </div>
-      )}
+      )
 
       {/* Modal for Word Details */}
       {selectedWord && <Modal wordDetails={selectedWord} onClose={() => setSelectedWord(null)} />}
