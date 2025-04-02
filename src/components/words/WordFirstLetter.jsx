@@ -110,7 +110,7 @@ const WordFirstLetter = ({ wordData }) => {
                   {words.map((word) => (
                     <div
                       key={word}
-                      className="p-2 bg-gray-100 text-center rounded-lg hover:bg-primary hover:text-white transition-all cursor-pointer"
+                      className="p-2 bg-gray-100 text-center rounded-lg hover:bg-primary hover:text-white transition-all cursor-pointer text-blue-700"
                       onClick={() => setSelectedWord(outputJson?.eachWord[word])}
                     >
                       {word}
