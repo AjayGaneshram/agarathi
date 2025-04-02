@@ -44,7 +44,7 @@ const WordList = () => {
           <div className="mb-4">
             <button
               className="text-red-500 hover:text-orange-700 transition text-lg flex items-center"
-              onClick={() => navigate(`/`)}
+              onClick={() => navigate(`/agarathi`)}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
