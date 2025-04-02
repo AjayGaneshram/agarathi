@@ -25,16 +25,26 @@ const WordList = () => {
     (item) =>
       item.word.includes(searchTerm)
   );
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     wordData.length !== 0 && (
       <div className="bg-red-50 min-h-screen">
         <div className="max-w-4xl mx-auto bg-gray-50 p-6 rounded-lg shadow-md">
           {/* Back to Home Button */}
+          <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 w-8 h-8 bg-red-800 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-red-900 transition-all"
+          title="Scroll to Top"
+        >
+          ↑
+        </button>
           <div className="mb-4">
             <button
               className="text-red-500 hover:text-orange-700 transition text-lg flex items-center"
-              onClick={() => navigate(`/agarathi/`)}
+              onClick={() => navigate(`/`)}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
